@@ -1,0 +1,14 @@
+/bin
+/include
+/lib
+/lib64
+/include
+/Include
+/Lib
+/Scripts
+/share
+/tcl
+pip-selfcheck.json
+pyvenv.cfg
+*.log
+*.pyc
