@@ -6,10 +6,16 @@ app = Flask("src")
 @app.route("/", methods=["GET", "POST"])
 def index():
 	if request.method == "GET":
-		page = core.get_page("http://www.g1.globo.com")
-		result = core.get_element(page, ".bstn-fd-cover-picture img")
+		data = {
+			"tema":".feed-post-header",
+			"titulo":".feed-post-body-title"
+		}
 
-		"""return jsonify({"success":"ok", "data":result})"""
-		return "<h1>Teste</h1>"
+		result = core.make_search("http://www.g1.globo.com", data)
+
+
+		return jsonify(list(result.values()))
+
+
 if __name__ == "__main__":
 	app.run(debug=True, use_reloader=True)
