@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 from flask import Flask, request, jsonify
 import core
 
@@ -13,8 +15,7 @@ def index():
 
 		result = core.make_search("http://www.g1.globo.com", data)
 
-
-		return jsonify(list(result.values()))
+		return jsonify(result)
 
 
 if __name__ == "__main__":

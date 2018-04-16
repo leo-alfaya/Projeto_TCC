@@ -3,13 +3,15 @@ from bs4 import BeautifulSoup as bs4
 
 def get_page(url):
 	page = requests.get(url)
+
 	return bs4(page.content, "html.parser")
 
 
 def get_element(page, element_css):
 	items = page.select(element_css)
 
-	return items
+	return [i.get_text() for i in items]
+
 
 def make_search(url, config_search):
 	page = get_page(url)
