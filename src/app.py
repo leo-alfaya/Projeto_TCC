@@ -1,5 +1,3 @@
-#encoding: utf-8
-
 from flask import Flask, request, jsonify
 import core
 
@@ -10,13 +8,13 @@ def index():
 	if request.method == "GET":
 		data = {
 			"tema":".feed-post-header",
-			"titulo":".feed-post-body-title"
+			"titulo":".feed-post-body-title",
+			"img":".bstn-fd-picture-image"
 		}
 
 		result = core.make_search("http://www.g1.globo.com", data)
 
 		return jsonify(result)
-
 
 if __name__ == "__main__":
 	app.run(debug=True, use_reloader=True)

@@ -10,7 +10,7 @@ def get_page(url):
 def get_element(page, element_css):
 	items = page.select(element_css)
 
-	return [i.get_text() for i in items]
+	return [{"text":i.get_text(), "attrs":i.attrs} for i in items]
 
 
 def make_search(url, config_search):
@@ -21,7 +21,8 @@ def make_search(url, config_search):
 
 data = {
 	"tema":".feed-post-header",
-	"titulo":".feed-post-body-title"
+	"titulo":".feed-post-body-title",
+	"img":".bstn-fd-picture-image"
 }
 
 result = make_search("http://www.g1.globo.com", data)
