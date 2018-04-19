@@ -17,12 +17,3 @@ def make_search(url, config_search):
 	page = get_page(url)
 
 	return {index:get_element(page, selector) for index, selector in config_search.items()}
-
-
-data = {
-	"tema":".feed-post-header",
-	"titulo":".feed-post-body-title",
-	"img":".bstn-fd-picture-image"
-}
-
-result = make_search("http://www.g1.globo.com", data)
