@@ -12,4 +12,5 @@ pip-selfcheck.json
 pyvenv.cfg
 *.log
 *.pyc
-frontend/node_modules/
+/src/frontend/node_modules/
+/src/dist/
