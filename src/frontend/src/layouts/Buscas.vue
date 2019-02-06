@@ -1,11 +1,21 @@
 <template>
-    <div class="buscas">
+    <div class="container-buscas">
+        <el-container>
+            <Header></Header>
+            <el-main>
+            </el-main>
+        </el-container>
     </div>
 </template>
 
 <script>
+import Header from '../components/Header.vue'
+
 export default {
-  name: 'Buscas',
+    name: 'Buscas',
+    components: {
+        Header
+    }
 }
 </script>
 
